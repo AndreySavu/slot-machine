@@ -11,21 +11,16 @@ public class CsvReader {
         try (InputStream inputStream = CsvReader.class.getClassLoader().getResourceAsStream(resourcePath);
              BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream))) {
 
-            if (inputStream == null) {
-                throw new IOException("Resource file not found: " + resourcePath);
-            }
             String line;
             int row = 0;
             while ((line = reader.readLine()) != null && row < rows) {
                 String[] values = line.split(";");
                 for (int col = 0; col < cols; col++) {
-                    data[row][col] = Integer.parseInt(values[col+1]);
+                    data[row][col] = Integer.parseInt(values[col + 1]);
                 }
                 row++;
             }
         }
-        //for(int i =0;i<11;i++)
-        //    System.out.println(data[i][0] + " " + data[i][1] + " " + data[i][2]);
         return data;
     }
 }
