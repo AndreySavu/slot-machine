@@ -2,7 +2,7 @@ import lombok.Getter;
 
 import java.io.IOException;
 
-import static utills.ReaderCSV.loadFromCsv;
+import static utills.CsvReader.loadFromCsv;
 
 @Getter
 public class SlotMachineConfig {
